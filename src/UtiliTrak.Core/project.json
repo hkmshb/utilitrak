@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0-*",
+  "description": "Hazeltek UtiliTrak",
+  "authors": ["Hazeltek Solutions"],
+  "copyright": "Copyright (c) 2013 - 2016 Hazeltek Solutions",
+  "packOptions": {
+    "owners": ["Hazeltek Solutions"],
+    "summary": "Hazeltek UtiliTrak"
+  },
+
+  "buildOptions": {
+    "debugType": "portable"
+  },
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "Hazeltek.Core": "0.1.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
+    }
+  }
+}
