@@ -1,4 +1,5 @@
 using Hazeltek.UtiliTrak.Domain.Network;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
@@ -18,6 +19,9 @@ namespace Hazeltek.UtiliTrak.Mapping
                    .WithMany()
                    .HasForeignKey(p => p.SourceStationId)
                    .IsRequired();
+            builder.HasDiscriminator<PowerLineType>("Type")
+                   .HasValue<Feeder>(PowerLineType.Feeder)
+                   .HasValue<Upriser>(PowerLineType.Upriser);
             builder.Property(p => p.DateCommissioned);
             base.MapTimestamps(builder);
         }

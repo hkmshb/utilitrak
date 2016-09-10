@@ -72,4 +72,10 @@ namespace Hazeltek.UtiliTrak.Domain.Network
         Injection    = 2,
         Distribution = 3
     }
+
+    internal enum PowerLineType
+    {
+        Feeder  = 1,
+        Upriser = 2
+    }
 }

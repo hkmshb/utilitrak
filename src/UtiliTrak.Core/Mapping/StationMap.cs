@@ -23,7 +23,7 @@ namespace Hazeltek.UtiliTrak.Mapping
             builder.HasOne(s => s.SourcePowerLine)
                    .WithMany()
                    .HasForeignKey(s => s.SourcePowerLineId);
-            builder.HasDiscriminator<StationType>("StationType")
+            builder.HasDiscriminator<StationType>("Type")
                    .HasValue<TransmissionStation>(StationType.Transmission)
                    .HasValue<InjectionSubstation>(StationType.Injection)
                    .HasValue<DistributionSubstation>(StationType.Distribution);
