@@ -1,20 +1,20 @@
-using System;
+using Hazeltek.Domain;
 
 
 
-namespace Hazeltek.UtiliTrak.Domain
+namespace Hazeltek.UtiliTrak.Domain.Network
 {
-    public abstract class NetworkEntity: Entity
+    public abstract class NetworkEntity: TimestampedEntity
     {
         /// <summary>
         /// Gets or sets the network entity code.
         /// </summary>
-        public string Code { get; set; }
+        public virtual string Code { get; set; }
 
         /// <summary>
         /// Gets or sets an alternative code for the network entity.
         /// </summary>
-        public string AltCode { get; set; }
+        public virtual string AltCode { get; set; }
     }
 
 

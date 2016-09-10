@@ -1,11 +1,9 @@
-using System;
-
-
-
-namespace Hazeltek.UtiliTrak.Domain
+namespace Hazeltek.UtiliTrak.Domain.Network
 {
     public enum Voltage
     {
+        None = 0,
+
         /// <summary>
         /// Represents 0.415KV
         /// </summary>
@@ -34,6 +32,8 @@ namespace Hazeltek.UtiliTrak.Domain
 
     public enum VoltageRatio
     {
+        None = 0,
+
         /// <summary>
         /// Represents 11/0.415KV
         /// </summary>
@@ -66,4 +66,10 @@ namespace Hazeltek.UtiliTrak.Domain
     }
 
 
+    internal enum StationType
+    {
+        Transmission = 1,
+        Injection    = 2,
+        Distribution = 3
+    }
 }

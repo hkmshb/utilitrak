@@ -1,5 +1,5 @@
 using Hazeltek.Data.EFx;
-using Hazeltek.UtiliTrak.Domain;
+using Hazeltek.UtiliTrak.Domain.Network;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Reflection;
-using Hazeltek.Data.Common;
+using Hazeltek.Domain;
 using Hazeltek.Data.EFx;
 using Microsoft.EntityFrameworkCore;
 

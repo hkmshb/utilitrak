@@ -1,13 +1,13 @@
-using Hazeltek.UtiliTrak.Domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Hazeltek.UtiliTrak.Domain.Network;
 
 
 namespace Hazeltek.UtiliTrak.Mapping
 {
-    public abstract class StationMap<TEntity>: 
-           NetworkEntityMap<TEntity> where TEntity: Station
+    public class StationMap: NetworkEntityMap<Station>
     {
-        public override void Map(EntityTypeBuilder<TEntity> builder)
+        public override void Map(EntityTypeBuilder<Station> builder)
         {
             base.Map(builder);
             builder.Property(s => s.Name).HasMaxLength(100).IsRequired();
@@ -17,14 +17,16 @@ namespace Hazeltek.UtiliTrak.Mapping
             builder.Property(s => s.AddressTown).HasMaxLength(30);
             builder.Property(s => s.PostalCode).HasMaxLength(20);
             builder.Property(s => s.AddressRaw).HasMaxLength(200);
-
-            builder.HasOne(s => s.SourceFeeder)
+            builder.HasOne(m => m.AddressState)
                    .WithMany()
-                   .HasForeignKey(s => s.SourceFeederId);
-        }
-
-        protected override void MapTimestamps(EntityTypeBuilder<TEntity> builder)
-        {
+                   .HasForeignKey(m => m.AddressStateId);
+            builder.HasOne(s => s.SourcePowerLine)
+                   .WithMany()
+                   .HasForeignKey(s => s.SourcePowerLineId);
+            builder.HasDiscriminator<StationType>("StationType")
+                   .HasValue<TransmissionStation>(StationType.Transmission)
+                   .HasValue<InjectionSubstation>(StationType.Injection)
+                   .HasValue<DistributionSubstation>(StationType.Distribution);
             builder.Property(s => s.DateCommissioned);
             base.MapTimestamps(builder);
         }
