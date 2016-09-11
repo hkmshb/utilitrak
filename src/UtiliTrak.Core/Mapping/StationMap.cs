@@ -23,10 +23,10 @@ namespace Hazeltek.UtiliTrak.Mapping
             builder.HasOne(s => s.SourcePowerLine)
                    .WithMany()
                    .HasForeignKey(s => s.SourcePowerLineId);
-            builder.HasDiscriminator<StationType>("Type")
-                   .HasValue<TransmissionStation>(StationType.Transmission)
-                   .HasValue<InjectionSubstation>(StationType.Injection)
-                   .HasValue<DistributionSubstation>(StationType.Distribution);
+            builder.HasDiscriminator<int>("Type")
+                   .HasValue<TransmissionStation>((int)StationType.Transmission)
+                   .HasValue<InjectionSubstation>((int)StationType.Injection)
+                   .HasValue<DistributionSubstation>((int)StationType.Distribution);
             builder.Property(s => s.DateCommissioned);
             base.MapTimestamps(builder);
         }

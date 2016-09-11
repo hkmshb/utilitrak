@@ -19,9 +19,9 @@ namespace Hazeltek.UtiliTrak.Mapping
                    .WithMany()
                    .HasForeignKey(p => p.SourceStationId)
                    .IsRequired();
-            builder.HasDiscriminator<PowerLineType>("Type")
-                   .HasValue<Feeder>(PowerLineType.Feeder)
-                   .HasValue<Upriser>(PowerLineType.Upriser);
+            builder.HasDiscriminator<int>("Type")
+                   .HasValue<Feeder>((int)PowerLineType.Feeder)
+                   .HasValue<Upriser>((int)PowerLineType.Upriser);
             builder.Property(p => p.DateCommissioned);
             base.MapTimestamps(builder);
         }
