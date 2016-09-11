@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0-*",
+  "description": "Hazeltek UtiliTrak Test",
+  "authors": ["Hazeltek Solutions"],
+  "copyright": "Copyright (c) 2013 - 2016 Hazeltek Solutions",
+  "packOptions": {
+    "owners": ["Hazeltek Solutions"],
+    "summary": "Hazeltek UtiliTrak Test"
+  },
+
+  "buildOptions": {
+    "debugType": "portable"
+  },
+
+  "testRunner": "xunit",
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "xunit": "2.2.0-beta2-build3300",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029",
+    "System.Data.Common": "4.1.0",
+    "UtiliTrak.Data": "0.2.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
+    }
+  }
+}
