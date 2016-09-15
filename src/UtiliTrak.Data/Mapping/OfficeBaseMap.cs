@@ -19,7 +19,8 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
                    .HasValue<BusinessOffice>('B');
             builder.HasOne(o => o.ParentOffice)
                    .WithMany()
-                   .HasForeignKey(o => o.ParentOfficeId);
+                   .HasForeignKey(o => o.ParentOfficeId)
+                   .IsRequired(false);
             base.MapTimestamps(builder);
         }
     }

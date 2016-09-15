@@ -16,24 +16,6 @@
           "lib/netstandard1.1/Autofac.dll": {}
         }
       },
-      "Hazeltek.Core/0.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Autofac": "4.0.0",
-          "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
-          "Microsoft.Extensions.DependencyModel": "1.0.0",
-          "Microsoft.NETCore.App": "1.0.0",
-          "Npgsql": "3.1.5",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1",
-          "System.Data.Common": "4.1.0"
-        },
-        "compile": {
-          "lib/netcoreapp1.0/Hazeltek.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp1.0/Hazeltek.Core.dll": {}
-        }
-      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -2244,7 +2226,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.Runtime.Loader.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Runtime.Loader.dll": {}
@@ -2886,6 +2868,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Hazeltek.Core/0.3.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Autofac": "4.0.0",
+          "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+          "Microsoft.Extensions.DependencyModel": "1.0.0",
+          "Microsoft.NETCore.App": "1.0.0",
+          "Npgsql": "3.1.5",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1",
+          "System.Data.Common": "4.1.0",
+          "System.Runtime.Loader": "4.0.0"
+        }
       }
     }
   },
@@ -2903,16 +2899,6 @@
         "lib/netstandard1.1/Autofac.xml",
         "lib/uap10.0/Autofac.dll",
         "lib/uap10.0/Autofac.xml"
-      ]
-    },
-    "Hazeltek.Core/0.2.0": {
-      "sha512": "Kn3W8MY2WXca/Vqx8pc87kiardqxioyy/HVBuIQ+IJJrcInE4GWct5w5L83bQznQ7JL+HXuxxzFjw1kJBDjNfw==",
-      "type": "package",
-      "path": "Hazeltek.Core/0.2.0",
-      "files": [
-        "Hazeltek.Core.0.2.0.nupkg.sha512",
-        "Hazeltek.Core.nuspec",
-        "lib/netcoreapp1.0/Hazeltek.Core.dll"
       ]
     },
     "Libuv/1.9.0": {
@@ -8367,11 +8353,15 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "Hazeltek.Core/0.3.0": {
+      "type": "project",
+      "path": "../Hazeltek.Core/project.json"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Hazeltek.Core >= 0.2.0",
+      "Hazeltek.Core >= 0.3.0",
       "Microsoft.EntityFrameworkCore.Design >= 1.0.0-preview2-final",
       "Microsoft.EntityFrameworkCore.Relational >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 1.0.0",

@@ -12,6 +12,9 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
         public override void Map(EntityTypeBuilder<Country> builder)
         {
             builder.HasKey(c => c.Id);
+            builder.HasAlternateKey(c => c.Code);
+            builder.HasAlternateKey(c => c.Name);
+            
             builder.Property(c => c.Code).HasMaxLength(3).IsRequired();
             builder.Property(c => c.Name).HasMaxLength(50).IsRequired();
             builder.Property(c => c.DateCreated);

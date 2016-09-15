@@ -43,7 +43,7 @@ namespace Hazeltek.UtiliTrak.Data.Domain.Network
         /// <summary>
         /// Gets or sets the powerline source station Id.
         /// </summary>
-        public virtual int SourceStationId { get; set; }
+        public virtual int? SourceStationId { get; set; }
 
         /// <summary>
         /// Gets or sets the powerline source station.

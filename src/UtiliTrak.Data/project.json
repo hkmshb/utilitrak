@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0-*",
+  "version": "0.3.0-*",
   "description": "Hazeltek UtiliTrak",
   "authors": ["Hazeltek Solutions"],
   "copyright": "Copyright (c) 2013 - 2016 Hazeltek Solutions",
@@ -24,7 +24,7 @@
     "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "System.Data.Common": "4.1.0",
-    "Hazeltek.Core": "0.2.0"  
+    "Hazeltek.Core": "0.3.0"  
   },
 
   "frameworks": {

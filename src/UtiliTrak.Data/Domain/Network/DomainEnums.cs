@@ -66,14 +66,14 @@ namespace Hazeltek.UtiliTrak.Data.Domain.Network
     }
 
 
-    internal enum StationType
+    public enum StationType
     {
         Transmission = 1,
         Injection    = 2,
         Distribution = 3
     }
 
-    internal enum PowerLineType
+    public enum PowerLineType
     {
         Feeder  = 1,
         Upriser = 2

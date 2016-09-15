@@ -19,7 +19,8 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
             builder.Property(m => m.AddressRaw).HasMaxLength(200);
             builder.HasOne(m => m.AddressState)
                    .WithMany()
-                   .HasForeignKey(m => m.AddressStateId);
+                   .HasForeignKey(m => m.AddressStateId)
+                   .IsRequired(false);
         }
     }
 

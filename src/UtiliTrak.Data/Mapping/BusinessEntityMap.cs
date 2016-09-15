@@ -12,6 +12,8 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
         public override void Map(EntityTypeBuilder<TEntity> builder)
         {
             builder.HasKey(m => m.Id);
+            builder.HasAlternateKey(m => m.Name);
+            
             builder.Property(m => m.Name).HasMaxLength(100).IsRequired();
             builder.HasMany(m => m.ContactDetails)
                    .WithOne()

@@ -1,5 +1,6 @@
-using Hazeltek.UtiliTrak.Data.Domain.Network;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Hazeltek.UtiliTrak.Data.Domain.Network;
 
 
 
@@ -10,7 +11,8 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
         public override void Map(EntityTypeBuilder<Manufacturer> builder)
         {
             base.Map(builder);
-            builder.Property(m => m.IsLocal);
+            builder.Property(m => m.IsLocal).IsRequired()
+                   .HasDefaultValue(false);
             base.MapTimestamps(builder);
         }
     }

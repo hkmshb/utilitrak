@@ -20,7 +20,7 @@ namespace Hazeltek.UtiliTrak.Data.Domain
         /// <summary>
         /// Gets or sets the parent office Id.
         /// </summary>
-        public virtual int ParentOfficeId { get; set; }
+        public virtual int? ParentOfficeId { get; set; }
 
         /// <summary>
         /// Gets or sets the parent office.

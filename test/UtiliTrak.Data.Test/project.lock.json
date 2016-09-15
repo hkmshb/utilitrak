@@ -30,7 +30,7 @@
           "lib/netcoreapp1.0/dotnet-test-xunit.dll": {}
         }
       },
-      "Hazeltek.Core/0.2.0": {
+      "Hazeltek.Core/0.3.0": {
         "type": "package",
         "dependencies": {
           "Autofac": "4.0.0",
@@ -39,7 +39,8 @@
           "Microsoft.NETCore.App": "1.0.0",
           "Npgsql": "3.1.5",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1",
-          "System.Data.Common": "4.1.0"
+          "System.Data.Common": "4.1.0",
+          "System.Runtime.Loader": "4.0.0"
         },
         "compile": {
           "lib/netcoreapp1.0/Hazeltek.Core.dll": {}
@@ -2897,10 +2898,10 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "UtiliTrak.Data/0.2.0": {
+      "UtiliTrak.Data/0.3.0": {
         "type": "package",
         "dependencies": {
-          "Hazeltek.Core": "0.2.0",
+          "Hazeltek.Core": "0.3.0",
           "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
           "Microsoft.NETCore.App": "1.0.0",
@@ -3040,12 +3041,12 @@
         "runtimes/win7-x86/lib/net451/dotnet-test-xunit.exe"
       ]
     },
-    "Hazeltek.Core/0.2.0": {
-      "sha512": "Kn3W8MY2WXca/Vqx8pc87kiardqxioyy/HVBuIQ+IJJrcInE4GWct5w5L83bQznQ7JL+HXuxxzFjw1kJBDjNfw==",
+    "Hazeltek.Core/0.3.0": {
+      "sha512": "9A4lA8ET+nZQLEsUdgMFAJxMgNeVvU4qzZUSem2dMBvHPXZNxXu7sz1TuEGoHFaEnK+LIEsS3FI2wNZMSM5gFA==",
       "type": "package",
-      "path": "Hazeltek.Core/0.2.0",
+      "path": "Hazeltek.Core/0.3.0",
       "files": [
-        "Hazeltek.Core.0.2.0.nupkg.sha512",
+        "Hazeltek.Core.0.3.0.nupkg.sha512",
         "Hazeltek.Core.nuspec",
         "lib/netcoreapp1.0/Hazeltek.Core.dll"
       ]
@@ -8470,12 +8471,12 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "UtiliTrak.Data/0.2.0": {
-      "sha512": "Cysw7BEBrGicThjLuSdYFP8J/yV1/uYXKTqhdBfwlt/6nqzx+w7VXl/lE+cNo3c0+ec57k54eOrWM/1g5col8w==",
+    "UtiliTrak.Data/0.3.0": {
+      "sha512": "RNAFs1hgStA0ZHrxqjpIyXr7XPkbj+KhN1Fune/jlTAOmoylAWrwJcKcQbiPuPdIi3t9hmBI5EBnxWry5ZYTHQ==",
       "type": "package",
-      "path": "UtiliTrak.Data/0.2.0",
+      "path": "UtiliTrak.Data/0.3.0",
       "files": [
-        "UtiliTrak.Data.0.2.0.nupkg.sha512",
+        "UtiliTrak.Data.0.3.0.nupkg.sha512",
         "UtiliTrak.Data.nuspec",
         "lib/netcoreapp1.0/UtiliTrak.Data.dll"
       ]
@@ -8595,7 +8596,7 @@
     "": [
       "Microsoft.NETCore.App >= 1.0.0",
       "System.Data.Common >= 4.1.0",
-      "UtiliTrak.Data >= 0.2.0",
+      "UtiliTrak.Data >= 0.3.0",
       "dotnet-test-xunit >= 2.2.0-preview2-build1029",
       "xunit >= 2.2.0-beta2-build3300"
     ],

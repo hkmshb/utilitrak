@@ -55,7 +55,7 @@ namespace Hazeltek.UtiliTrak.Data.Domain.Network
         /// <summary>
         /// Gets or sets the address state Id.
         /// </summary>
-        public virtual int AddressStateId { get; set; }
+        public virtual int? AddressStateId { get; set; }
 
         /// <summary>
         /// Gets or sets the address state.
@@ -70,7 +70,7 @@ namespace Hazeltek.UtiliTrak.Data.Domain.Network
         /// <summary>
         /// Gets or sets the source power ilne Id.
         /// </summary>
-        public virtual int SourcePowerLineId { get; set; }
+        public virtual int? SourcePowerLineId { get; set; }
 
         /// <summary>
         /// Gets or sets the source power line.
