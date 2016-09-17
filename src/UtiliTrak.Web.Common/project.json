@@ -1,0 +1,32 @@
+{
+  "version": "0.3.0-*",
+  "description": "Hazeltek UtiliTrak",
+  "authors": ["Hazeltek Solutions"],
+  "copyright": "Copyright (c) 2013 - 2016 Hazeltek Solutions",
+  "packOptions": {
+    "owners": ["Hazeltek Solutions"],
+    "summary": "Hazeltek UtiliTrak"
+  },
+
+  "buildOptions": {
+    "debugType": "portable"
+  },
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "Microsoft.AspNetCore.Routing": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "AutoMapper": "5.1.1",
+    "Hazeltek.Core": "0.3.0",
+    "UtiliTrak.Services": "0.3.0"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": "dnxcore50"
+    }
+  }
+}
