@@ -1,4 +1,5 @@
-using Hazeltek.Domain;
+using Microsoft.EntityFrameworkCore;
+using Hazeltek.UtiliTrak.Data.Domain;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
@@ -6,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Hazeltek.UtiliTrak.Data.Mapping
 {
     public abstract class LegalEntityMap<TEntity>: 
-          BusinessEntityMap<TEntity> where TEntity: LegalEntity
+          BusinessEntityMap<TEntity> where TEntity: BaseLegalEntity
     {
         public override void Map(EntityTypeBuilder<TEntity> builder)
         {
@@ -17,6 +18,7 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
             builder.Property(m => m.AddressTown).HasMaxLength(30);
             builder.Property(m => m.PostalCode).HasMaxLength(20);
             builder.Property(m => m.AddressRaw).HasMaxLength(200);
+            builder.Property(m => m.Deleted).HasDefaultValue(false);
             builder.HasOne(m => m.AddressState)
                    .WithMany()
                    .HasForeignKey(m => m.AddressStateId)

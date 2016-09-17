@@ -5,7 +5,7 @@ using Hazeltek.Domain;
 
 namespace Hazeltek.UtiliTrak.Data.Domain
 {
-    public abstract class OfficeBase: LegalEntity
+    public abstract class OfficeBase: BaseLegalEntity
     {
         /// <summary>
         /// Gets or sets the office code.

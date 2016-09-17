@@ -10,7 +10,7 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
         public override void Map(EntityTypeBuilder<Station> builder)
         {
             base.Map(builder);
-            builder.HasAlternateKey(s => s.Name);
+            builder.HasIndex(s => s.Name).IsUnique();
             builder.Property(s => s.Name).HasMaxLength(100).IsRequired();       
             builder.Property(s => s.VoltageRatio).IsRequired();
             builder.Property(s => s.IsPublic).IsRequired().HasDefaultValue(true);

@@ -15,6 +15,11 @@ namespace Hazeltek.UtiliTrak.Data.Domain.Network
         /// Gets or sets an alternative code for the network entity.
         /// </summary>
         public virtual string AltCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the network entity is deleted or not.
+        /// </summary>
+        public virtual bool Deleted  { get; set; }
     }
 
 

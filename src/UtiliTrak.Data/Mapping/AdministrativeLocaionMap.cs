@@ -1,6 +1,5 @@
 using Hazeltek.Domain;
 using Hazeltek.Data.EFx;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
@@ -12,8 +11,8 @@ namespace Hazeltek.UtiliTrak.Data.Mapping
         public override void Map(EntityTypeBuilder<Country> builder)
         {
             builder.HasKey(c => c.Id);
-            builder.HasAlternateKey(c => c.Code);
-            builder.HasAlternateKey(c => c.Name);
+            builder.HasIndex(c => c.Code).IsUnique();
+            builder.HasIndex(c => c.Name).IsUnique();
             
             builder.Property(c => c.Code).HasMaxLength(3).IsRequired();
             builder.Property(c => c.Name).HasMaxLength(50).IsRequired();
