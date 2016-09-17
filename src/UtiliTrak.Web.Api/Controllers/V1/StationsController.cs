@@ -13,7 +13,7 @@ using Hazeltek.UtiliTrak.Web.Common.TypeMapping;
 namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
 {
     [ApiVersion1Route("[controller]")]
-    public class StationsController: Controller
+    public class StationsController: BaseController
     {
         // fields:
         private IStationService stationService;
@@ -26,14 +26,13 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
         [HttpGet("", Name="GetStations")]
         public IActionResult GetStations([FromQuery]StationPagingFilteringModel command)
         {
-            var mapper = EngineContext.Current.Resolve<IAutoMapper>();
             var stations = stationService.GetProducts(command.PageIndex, command.PageSize,
                     command.Type, command.VoltageRatio, command.SourcePowerLineCode,
                     command.IsPublic);
             
             var models = new List<StationModel>();
             foreach (var station in stations) {
-                models.Add(mapper.Map<StationModel>(station));
+                models.Add(Mapper.Map<StationModel>(station));
             }
             return Ok(models);
         }
@@ -46,9 +45,8 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
                 return BadRequest(new { Errors = msg });
             }
 
-            var mapper = EngineContext.Current.Resolve<IAutoMapper>();
             var station = stationService.GetByCode(code);
-            return Ok(mapper.Map<StationModel>(station));
+            return Ok(Mapper.Map<StationModel>(station));
         }
 
 
@@ -58,7 +56,7 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
             return Process(() => {
                 var station = Map(model);
                 stationService.InsertStation(station);
-                return CreatedAtRoute("GetStation", new { Code=station.Code}, station);
+                return CreatedAtRoute("GetStation", new { Code=station.Code.ToLower()}, station);
             });
         }
 
@@ -108,7 +106,6 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
 
         private Station Map(StationModel model)
         {
-            var Mapper = EngineContext.Current.Resolve<IAutoMapper>();
             switch (model.Type) {
                 case StationType.Transmission:
                     return Mapper.Map<TransmissionStation>(model);
@@ -116,18 +113,6 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
                     return Mapper.Map<InjectionSubstation>(model);
                 default:
                     return Mapper.Map<DistributionSubstation>(model); 
-            }
-        }
-
-        private IActionResult Process(Func<IActionResult> action)
-        {
-            try {
-                if (ModelState.IsValid) {
-                    return action();
-                }
-                return BadRequest(new { Errors = ModelState.Values });
-            } catch (Exception ex) {
-                return BadRequest(new { Errors = ex.ToString() });
             }
         }
     }

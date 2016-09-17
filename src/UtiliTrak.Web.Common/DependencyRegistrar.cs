@@ -48,6 +48,8 @@ namespace Hazeltek.UtiliTrak.Web.Common
             // services
             builder.RegisterType<StationService>().As<IStationService>()
                    .InstancePerLifetimeScope();
+            builder.RegisterType<PowerLineService>().As<IPowerLineService>()
+                   .InstancePerLifetimeScope();
         }
     }
 

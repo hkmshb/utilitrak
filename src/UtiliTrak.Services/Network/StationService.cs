@@ -59,7 +59,7 @@ namespace Hazeltek.UtiliTrak.Services.Network
                 query = query.Where(s => s.VoltageRatio == voltageRatio.Value);
             
             if (!string.IsNullOrWhiteSpace(sourcePowerLineCode))
-                query = query.Where(s => s.SourcePowerLine.Code == sourcePowerLineCode);
+                query = query.Where(s => s.SourcePowerLine.Code.ToLower() == sourcePowerLineCode.ToLower());
             
             if (isPublic.HasValue)
                 query = query.Where(s => s.IsPublic == isPublic.Value);
@@ -106,12 +106,14 @@ namespace Hazeltek.UtiliTrak.Services.Network
 
         public void InsertStation(Station station)
         {
+            // TODO: use service to get datetime
             station.DateCreated = DateTime.Now;
             stationRepository.Insert(station);
         }
 
         public void UpdateStation(Station station)
         {
+            // TODO: use service to get datetime
             station.LastUpdated = DateTime.Now;
             stationRepository.Update(station);
         }
