@@ -26,7 +26,9 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
         [HttpGet("", Name="GetStations")]
         public IActionResult GetStations([FromQuery]StationPagingFilteringModel command)
         {
-            var stations = stationService.GetProducts(command.PageIndex, command.PageSize,
+            // TODO: get page size from user or default settings
+            var pageSize = command.PageSize > 0? command.PageSize: 20;
+            var stations = stationService.GetStations(command.PageIndex, pageSize,
                     command.Type, command.VoltageRatio, command.SourcePowerLineCode,
                     command.IsPublic);
             

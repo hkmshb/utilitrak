@@ -12,7 +12,7 @@ namespace Hazeltek.UtiliTrak.Services.Network
 
         Station GetByAltCode(string altCode);
 
-        IPagedList<Station> GetProducts(int pageIndex=0, int pageSize=int.MaxValue,
+        IPagedList<Station> GetStations(int pageIndex=0, int pageSize=int.MaxValue,
             StationType? type=null, VoltageRatio? voltageRatio=null, 
             string sourcePowerLineCode=null, bool? isPublic=null);
 

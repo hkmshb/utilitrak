@@ -13,7 +13,7 @@ namespace Hazeltek.UtiliTrak.Web.Common.Paging
         /// <summary>
         /// Gets the current page number (starts from 1).
         /// </summary>
-        int PageNumber { get; }
+        int Page { get; }
 
         /// <summary>
         /// Gets the number of items in each page.

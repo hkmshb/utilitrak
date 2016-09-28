@@ -21,8 +21,10 @@ namespace Hazeltek.UtiliTrak.Web.Api.Controllers.V1
         [HttpGet("", Name="GetPowerLines")]
         public IActionResult GetPowerLines([FromQuery] PowerLinePagingFilteringModel command)
         {
+            // TODO: get page size from user or default settings
+            var pageSize = command.PageSize > 0? command.PageSize: 20;
             var powerlines = powerlineService.GetPowerLines(command.PageIndex,
-                    command.PageSize, command.Type, command.Voltage,
+                    pageSize, command.Type, command.Voltage,
                     command.SourceStationCode);
             
             var models = new List<PowerLineModel>();

@@ -12,7 +12,7 @@ namespace Hazeltek.UtiliTrak.Web.Common.Paging
             int indexStartPos = (pagedList.PageIndex * pagedList.PageSize);
             LastItem = Math.Min(pagedList.TotalCount, indexStartPos + pagedList.PageSize);
             FirstItem = indexStartPos + 1;
-            PageNumber = pagedList.PageIndex + 1;
+            Page = pagedList.PageIndex + 1;
             PageSize = pagedList.PageSize;
             TotalItems = pagedList.TotalCount;
             TotalPages = pagedList.TotalPages;
@@ -24,8 +24,8 @@ namespace Hazeltek.UtiliTrak.Web.Common.Paging
         public int PageIndex 
         { 
             get {
-                if (PageNumber > 0)
-                    return PageNumber - 1;
+                if (Page > 0)
+                    return Page - 1;
                 return 0;
             } 
         }
@@ -33,7 +33,7 @@ namespace Hazeltek.UtiliTrak.Web.Common.Paging
         /// <summary>
         /// Gets the current page number (starts from 1).
         /// </summary>
-        public int PageNumber { get; set; }
+        public int Page { get; set; }
 
         /// <summary>
         /// Gets the number of items in each page.
