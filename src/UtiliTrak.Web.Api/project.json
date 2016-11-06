@@ -23,6 +23,7 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1-*",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -32,6 +33,7 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Autofac.Extensions.DependencyInjection": "4.0.0",
+    "Npgsql": "3.1.5-*",
     "Autofac": "4.0.0",
     "Hazeltek.Core": "0.3.0",
     "UtiliTrak.Data": "0.3.0",

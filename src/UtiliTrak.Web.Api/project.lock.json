@@ -3736,6 +3736,8 @@
           "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
           "Microsoft.NETCore.App": "1.0.0",
+          "Npgsql": "3.1.5",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1",
           "System.Data.Common": "4.1.0"
         }
       },
@@ -3755,7 +3757,8 @@
           "Hazeltek.Core": "0.3.0",
           "Microsoft.AspNetCore.Mvc": "1.0.0",
           "Microsoft.AspNetCore.Routing": "1.0.0",
-          "Microsoft.NETCore.App": "1.0.0"
+          "Microsoft.NETCore.App": "1.0.0",
+          "UtiliTrak.Services": "0.3.0"
         }
       }
     }
@@ -9895,6 +9898,8 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
+      "Npgsql >= 3.1.5-*",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 1.0.1-*",
       "UtiliTrak.Data >= 0.3.0",
       "UtiliTrak.Services >= 0.3.0",
       "UtiliTrak.Web.Common >= 0.3.0"

@@ -13,7 +13,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     Code = table.Column<string>(maxLength: 3, nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     LastUpdated = table.Column<DateTime>(nullable: true),
@@ -29,7 +29,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     Code = table.Column<string>(maxLength: 3, nullable: false),
                     CountryId = table.Column<int>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
@@ -52,7 +52,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     Code = table.Column<string>(maxLength: 3, nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     LastUpdated = table.Column<DateTime>(nullable: true),
@@ -75,14 +75,16 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     AddressRaw = table.Column<string>(maxLength: 200, nullable: true),
                     AddressStateId = table.Column<int>(nullable: true),
                     AddressStreet = table.Column<string>(maxLength: 100, nullable: true),
                     AddressTown = table.Column<string>(maxLength: 30, nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Deleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    IsLocal = table.Column<bool>(nullable: false, defaultValue: false),
+                    Deleted = table.Column<bool>(nullable: false, defaultValue: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    IsLocal = table.Column<bool>(nullable: false, defaultValue: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     LastUpdated = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     PostalCode = table.Column<string>(maxLength: 20, nullable: true),
@@ -105,7 +107,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     AddressRaw = table.Column<string>(maxLength: 200, nullable: true),
                     AddressStateId = table.Column<int>(nullable: true),
                     AddressStreet = table.Column<string>(maxLength: 100, nullable: true),
@@ -113,7 +115,8 @@ namespace UtiliTrak.Data.Migrations
                     AltCode = table.Column<string>(maxLength: 20, nullable: true),
                     Code = table.Column<string>(maxLength: 10, nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Deleted = table.Column<bool>(nullable: false, defaultValue: false),
+                    Deleted = table.Column<bool>(nullable: false, defaultValue: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     LastUpdated = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     ParentOfficeId = table.Column<int>(nullable: true),
@@ -151,7 +154,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     BusinessEntityId = table.Column<int>(nullable: false),
                     IsDefault = table.Column<bool>(nullable: false),
                     ManufacturerId = table.Column<int>(nullable: true),
@@ -183,7 +186,7 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     AddressRaw = table.Column<string>(maxLength: 200, nullable: true),
                     AddressStateId = table.Column<int>(nullable: true),
                     AddressStreet = table.Column<string>(maxLength: 100, nullable: true),
@@ -192,8 +195,10 @@ namespace UtiliTrak.Data.Migrations
                     Code = table.Column<string>(maxLength: 20, nullable: false),
                     DateCommissioned = table.Column<DateTime>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Deleted = table.Column<bool>(nullable: false, defaultValue: false),
-                    IsPublic = table.Column<bool>(nullable: false, defaultValue: true),
+                    Deleted = table.Column<bool>(nullable: false, defaultValue: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                    IsPublic = table.Column<bool>(nullable: false, defaultValue: true)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     LastUpdated = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     PostalCode = table.Column<string>(maxLength: 20, nullable: true),
@@ -218,21 +223,23 @@ namespace UtiliTrak.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     AltCode = table.Column<string>(maxLength: 30, nullable: true),
                     Code = table.Column<string>(maxLength: 20, nullable: false),
                     DateCommissioned = table.Column<DateTime>(nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Deleted = table.Column<bool>(nullable: false, defaultValue: false),
+                    Deleted = table.Column<bool>(nullable: false, defaultValue: false)
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     LastUpdated = table.Column<DateTime>(nullable: true),
                     LineLength = table.Column<int>(nullable: false, defaultValue: 0)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
                     PoleCount = table.Column<int>(nullable: false, defaultValue: 0)
-                        .Annotation("Autoincrement", true),
+                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
                     SourceStationId = table.Column<int>(nullable: true),
                     Type = table.Column<int>(nullable: false),
-                    Voltage = table.Column<int>(nullable: false)
+                    Voltage = table.Column<int>(nullable: false),
+                    IsPublic = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {

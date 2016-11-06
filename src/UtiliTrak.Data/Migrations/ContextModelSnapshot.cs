@@ -392,6 +392,7 @@ namespace UtiliTrak.Data.Migrations
                 {
                     b.HasBaseType("Hazeltek.UtiliTrak.Data.Domain.Network.PowerLine");
 
+                    b.Property<bool>("IsPublic");
 
                     b.ToTable("Feeder");
 

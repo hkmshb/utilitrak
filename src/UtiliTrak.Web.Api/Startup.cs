@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Net;
 using System.Reflection;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using Hazeltek.Data.EFx;
 using Hazeltek.UtiliTrak.Data;
 using Hazeltek.UtiliTrak.Web.Common.Routing;
-using Hazeltek.UtiliTrak.Services.Network;
 using Hazeltek.Infrastructure;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -34,8 +34,7 @@ namespace Hazeltek.UtiliTrak.Web
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettigns.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettigns.{env.EnvironmentName}.json", optional: true);
+                .AddJsonFile("appsettings.json", optional:false, reloadOnChange: true);
             
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -74,7 +73,9 @@ namespace Hazeltek.UtiliTrak.Web
                 options.ConstraintMap.Add("apiVersionConstraint", typeof(ApiVersionRouteConstraint)));
 
             // core asp.net settings
-            services.AddDbContext<Context>(options => options.UseSqlite("Filename=utilitrak.db"));
+            var connString = Configuration.GetConnectionString("DefaultConnection");
+             services.AddDbContext<Context>(options => { 
+                options.UseNpgsql(connString, a => a.MigrationsAssembly("UtiliTrak.Data")); });
             services.AddScoped<IDbContext, Context>();
 
             // populate IoC container

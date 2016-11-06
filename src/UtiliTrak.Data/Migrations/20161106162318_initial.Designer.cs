@@ -8,7 +8,7 @@ using Hazeltek.UtiliTrak.Data;
 namespace UtiliTrak.Data.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20160917015732_initial")]
+    [Migration("20161106162318_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -393,6 +393,7 @@ namespace UtiliTrak.Data.Migrations
                 {
                     b.HasBaseType("Hazeltek.UtiliTrak.Data.Domain.Network.PowerLine");
 
+                    b.Property<bool>("IsPublic");
 
                     b.ToTable("Feeder");
 

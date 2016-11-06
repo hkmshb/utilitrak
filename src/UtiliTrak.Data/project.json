@@ -23,8 +23,10 @@
     },
     "Microsoft.EntityFrameworkCore.Relational": "1.0.0",
     "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+    "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.1-*",
     "System.Data.Common": "4.1.0",
-    "Hazeltek.Core": "0.3.0"  
+    "Hazeltek.Core": "0.3.0",
+    "Npgsql": "3.1.5-*"  
   },
 
   "frameworks": {

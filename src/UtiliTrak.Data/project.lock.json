@@ -8366,6 +8366,8 @@
       "Microsoft.EntityFrameworkCore.Relational >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
+      "Npgsql >= 3.1.5-*",
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 1.0.1-*",
       "System.Data.Common >= 4.1.0"
     ],
     ".NETCoreApp,Version=v1.0": []
